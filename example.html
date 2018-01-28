@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Accessibility Test</title>
+	<meta charset="UTF-8">
+	<link rel='stylesheet' href='example.css'></link>
+	<!--Check for updated Bootstrap File-->
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css'>
+	<!--Explicit JS writes file only <script type='text/javascript' src="example.js"></script> -->
+</head>
+
+<body>
+	<div id='main'>
+		<h1>Personal Information</h1>
+			<div>Name: <script>document.write(name);</script></div>
+			<div>Age: <script>document.write(age);</script></div>
+			<div>Marital Status: <script>document.write(maritalStatus);</script></div>
+
+		<h2>Calculation</h2>
+			<label for='calculation'>Quick Maths</label>
+				<div id='calc'>
+					<input type='submit' value='Quick Maths' id='calculation' onclick='addNumbers();'>
+				</div>
+		<h2>Arrays</h2>
+			<label for='arrayButton'>Show Me the Array</label>
+				<div id='arrays'>
+					<input type='submit' value='Show me the Array' onclick='seeTheArray();' id='arrayButton'>
+				</div>
+		<h2>Functions</h2>
+			<p>Passive Parameters <script>addNumber(10, 50)</script></p>
+		<h2>Event Handling</h2>
+			<!--Button Class used here is from Bootstrap-->
+			<p>Standard HTML button element with an explicit onclick event handler</p>
+				<button class='btn btn-primary' onclick="alert('Hello from Button');">Click Me</button>
+			<p>Standard HTML button element with an external onclick event handler (JS File)</p>
+				<button class='btn btn-success' id='external'>Click Me</button>
+			<p>Custom control with an explicit onclick event handler</p>
+				<div class='btn btn-primary' onclick="alert('Hello from Custom Button');">Click Me</div>
+			<p>Custom control with an external onclick event handler (JS File)</p>
+				<div class='btn btn-success' id='external2'>Click Me</div>
+			<p>Custom control with a tabindex='0' and an explicit onclick and onkeypress event handler</p>
+				<div class='btn btn-info' onkeypress="alert('Hello from Custom Button');"onclick="alert('Hello from Custom Button');" tabindex='0'>Click Me</div>
+			<p>Custom control with a tabindex='0' and an external onclick and onkeypress event handler (JS File)</p>
+				<div class='btn btn-info' id='custom' tabindex='0'>Click Me</div>
+			<p>Notice that simply using the onkeypress event handler creates a keyboard trap.  The onkeypress event handler must be focused to only listen for the "Enter" and "Spacebar" keys.</p>
+		<h2>Forms</h2>
+			<label for='form0'>Enter a Number</label>
+				<input type='number' id='form0'>
+			<label for='form1'>Enter another Number</label>
+				<input type='number' id='form1'>
+			<button type='submit' id='addition'>Submit</button>
+			<p>Result</p>
+			<div id='additionResults'>
+			</div>
+			<label for='keycode'>Press any printable key to determine it's keycode</label>
+				<input type='text' id='keycode' onkeypress='uniCharCode(event)' onkeydown='uniKeyCode(event)'>
+				<p>onkeypress = <span id='keycode0'></span></p>
+				<p>onkeydown = <span id='keycode1'></span></p>
+	</div>
+<script
+	src="https://code.jquery.com/jquery-3.3.1.js"
+	integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	crossorigin="anonymous">  	
+</script>
+<script type='text/javascript' src="example.js"></script>
+<!-- Placing script tag at the bottom so that the DOM renders before the JS runs.  If placed at the top, calls like document.getElementById will fail because the id being queried does not exist yet.
+HOWEVER - noticing that if you place the JS at the bottom, explicit calls like document.write and embedded functions do not run on page load. 
+On further research, found that most recommend to avoid using explicit JS writes on the page (such as document.write, in order to ensure that all content loads appropriately) Explicit writes should be placed in a separate JS file and placed in the <head>-->
+</body>
+</html>
