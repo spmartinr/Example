@@ -1,5 +1,5 @@
 /*----STANDARD VARIABLES----*/
-var shane = 'Shane';
+var shane      = 'Shane';
 
 /*----ARRAYS----*/
 var shaneArray = new Array('Shane','Paul','Martin');
@@ -10,8 +10,8 @@ function seeTheArray(){
 
 /*----Document Writing----
 Can use the document.write() command inline HTML to inject a variable*/
-var name = 'Shane';
-var age = '28';
+var name          = 'Shane';
+var age           = '28';
 var maritalStatus = 'Married';
 
 /*----MATH----
@@ -21,8 +21,8 @@ JavaScript follows the order of operation - PEMDAS
 * = Multiplication
 / = Division
 */
-var math1 = 10;
-var math2 = 10;
+var math1           = 10;
+var math2           = 10;
 var calculationMath = math1 + math2;
 // var calculationMath = math1 - math2;
 // var calculationMath = math1 * math2;
@@ -37,8 +37,8 @@ var calculate1 = (10 +10) * 5;
 alert(calculate1);
 
 /*----CALCULATIONS----*/
-var number1 = 500;
-var number2 = 300;
+var number1     = 500;
+var number2     = 300;
 var calculation = number1 + number2;
 document.write(calculation);
 
@@ -67,7 +67,7 @@ function complexCalculation(){
 return compcalc;
 }
 var result = complexCalculation();
-var cal = result + 1000;
+var cal    = result + 1000;
 alert(cal);
 
 /*----IF ELSE STATEMENTS----
@@ -173,8 +173,8 @@ document.getElementById('addition').onclick = function() {
 };
 
 function addMe() {
-	var firstNumber = document.getElementById('form0').value;
-	var secondNumber = document.getElementById('form1').value;
+	var firstNumber    = document.getElementById('form0').value;
+	var secondNumber   = document.getElementById('form1').value;
 	var additionResult = firstNumber + secondNumber;
 return additionResult;
 }
@@ -286,7 +286,7 @@ console.dirxml(document.body);
 		url: 'https://reqres.in/api/users',
 		type: 'GET',
 		success: function(response) {
-			var users = response.data;
+			var users  = response.data;
 			for (var i = 0; i < users.length; i++){
 				logUsers(users[i]);
 			}
@@ -360,3 +360,15 @@ firstFunction();
 
 //console.warn() - Displays a warning message in the console, with a warning icon(!) and a yellow background.
 console.warn('This is a warning message');
+
+
+
+
+
+
+
+
+	
+
+
+
